@@ -4,6 +4,7 @@ spring:
     username: sns_gpt
     password: sns_gpt
   jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
     properties:
