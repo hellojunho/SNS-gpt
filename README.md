@@ -7,6 +7,15 @@ React 프런트엔드 + Spring Boot 백엔드 + PostgreSQL로 구성된 뉴스 �
 - `frontend/`: React (Vite)
 - `backend/`: Spring Boot 3.3 + Java 17 + PostgreSQL (Gradle)
 
+## Docker Compose 실행
+
+```bash
+docker compose up --build
+```
+
+- Backend: `http://localhost:8080`
+- Frontend: `http://localhost:5173`
+
 ## 백엔드 실행
 
 ```bash
@@ -34,3 +43,4 @@ npm run dev
 - 파일 경로를 DB에 저장하고 API로 전달
 - GPT10 탭에서 최신 10건의 헤드라인 요약 파일 생성
 - Chat with GPT 탭을 통해 뉴스 전문가 챗봇과 대화
+- ChatGPT Google 계정으로 로그인 및 마이페이지 관리
