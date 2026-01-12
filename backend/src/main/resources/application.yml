@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/sns_gpt
+    username: sns_gpt
+    password: sns_gpt
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: Asia/Seoul
+
+app:
+  storage:
+    base-path: ./data/news
+  scheduler:
+    timezone: Asia/Seoul
+    cron: "0 0 0,7,12,17,21 * * *"
+  secrets:
+    path: ./secrets.json
