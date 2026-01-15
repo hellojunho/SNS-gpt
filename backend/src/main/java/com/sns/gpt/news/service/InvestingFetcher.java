@@ -13,10 +13,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class InvestingFetcher {
-    private static final String INVESTING_NEWS_URL = "https://www.investing.com/news/stock-market-news";
+    private static final String NEWS_PATH = "/news/stock-market-news";
 
-    public List<NewsItem> fetchTopNews() throws IOException {
-        Document document = Jsoup.connect(INVESTING_NEWS_URL)
+    public List<NewsItem> fetchTopNews(String baseUrl) throws IOException {
+        Document document = Jsoup.connect(baseUrl + NEWS_PATH)
                 .userAgent("Mozilla/5.0")
                 .get();
 
