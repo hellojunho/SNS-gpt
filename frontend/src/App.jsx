@@ -4,7 +4,10 @@ const API_BASE = import.meta.env.VITE_API_BASE ?? 'http://localhost:8080/api';
 
 const tabs = [
   { key: 'BLOOMBERG', label: 'Bloomberg' },
-  { key: 'INVESTING', label: 'Investing.com' },
+  { key: 'INVESTING_USA', label: 'Investing.com USA' },
+  { key: 'INVESTING_KOREA', label: 'Investing.com Korea' },
+  { key: 'INVESTING_JAPAN', label: 'Investing.com Japan' },
+  { key: 'INVESTING_CHINA', label: 'Investing.com China' },
   { key: 'GPT10', label: 'GPT10' },
   { key: 'CHAT', label: 'Chat with GPT' }
 ];
@@ -140,7 +143,7 @@ const App = () => {
     <div className="app">
       <header className="header">
         <h1>SNS GPT 뉴스 요약</h1>
-        <p>Bloomberg · Investing.com · GPT10 · ChatGPT</p>
+        <p>Bloomberg · Investing.com (USA/Korea/Japan/China) · GPT10 · ChatGPT</p>
       </header>
       <main className="content">
         {activeTab === 'CHAT' ? (

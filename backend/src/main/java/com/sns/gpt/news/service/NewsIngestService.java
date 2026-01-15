@@ -45,7 +45,10 @@ public class NewsIngestService {
     @Transactional
     public void ingestAllSources() {
         ingestSource(NewsSource.BLOOMBERG, () -> bloombergFetcher.fetchTopNews());
-        ingestSource(NewsSource.INVESTING, () -> investingFetcher.fetchTopNews());
+        ingestSource(NewsSource.INVESTING_USA, () -> investingFetcher.fetchTopNews("https://www.investing.com"));
+        ingestSource(NewsSource.INVESTING_KOREA, () -> investingFetcher.fetchTopNews("https://kr.investing.com"));
+        ingestSource(NewsSource.INVESTING_JAPAN, () -> investingFetcher.fetchTopNews("https://jp.investing.com"));
+        ingestSource(NewsSource.INVESTING_CHINA, () -> investingFetcher.fetchTopNews("https://cn.investing.com"));
         generateGpt10Summary();
     }
 
