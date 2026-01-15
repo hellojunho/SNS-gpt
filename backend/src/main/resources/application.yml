@@ -29,6 +29,6 @@ app:
   secrets:
     path: ./secrets.json
   openai:
-    api-key: ${OPENAI_API_KEY:}
+    api-key: ${OPEN_AI_API_KEY:${OPENAI_API_KEY:}}
     base-url: ${OPENAI_BASE_URL:https://api.openai.com/v1}
     model: ${OPENAI_MODEL:gpt-4o-mini}
