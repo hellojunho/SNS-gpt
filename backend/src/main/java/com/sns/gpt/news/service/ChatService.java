@@ -43,7 +43,7 @@ public class ChatService {
         String apiKey = resolveApiKey();
         if (apiKey == null || apiKey.isBlank()) {
             return "OpenAI API 키가 설정되지 않아 GPT 응답을 생성할 수 없습니다. "
-                    + "secrets.json 또는 OPENAI_API_KEY 환경 변수를 확인해주세요.";
+                    + "secrets.json 또는 OPEN_AI_API_KEY/OPENAI_API_KEY 환경 변수를 확인해주세요.";
         }
 
         try {
