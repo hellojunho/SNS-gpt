@@ -4,10 +4,15 @@ spring:
     username: sns_gpt
     password: sns_gpt
   jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
+    open-in-view: false
     properties:
       hibernate:
+        hbm2ddl:
+          schema_update:
+            unique_constraint_strategy: SKIP
         jdbc:
           time_zone: Asia/Seoul
 

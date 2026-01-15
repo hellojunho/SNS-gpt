@@ -1,1 +1,4 @@
 secrets.json
+*.env
+*.lock
+*.bin
