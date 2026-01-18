@@ -1,8 +1,10 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/sns_gpt
-    username: sns_gpt
-    password: sns_gpt
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/sns_gpt}
+    username: ${SPRING_DATASOURCE_USERNAME:sns_gpt}
+    password: ${SPRING_DATASOURCE_PASSWORD:sns_gpt}
+    hikari:
+      initialization-fail-timeout: 60000
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
@@ -22,5 +24,11 @@ app:
   scheduler:
     timezone: Asia/Seoul
     cron: "0 0 0,7,12,17,21 * * *"
+  cors:
+    allowed-origins: ${APP_CORS_ALLOWED_ORIGINS:http://localhost:5173,http://127.0.0.1:5173}
   secrets:
     path: ./secrets.json
+  openai:
+    api-key: ${OPEN_AI_API_KEY:${OPENAI_API_KEY:}}
+    base-url: ${OPENAI_BASE_URL:https://api.openai.com/v1}
+    model: ${OPENAI_MODEL:gpt-4o-mini}
